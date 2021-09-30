@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         库学院刷学习时长
+// @name         酷学院刷学习时长
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
+// @description  自动刷酷学院刷学习时长
 // @author       You
 // @run-at     document-start
 // @match      https://learning.coolcollege.cn/*
