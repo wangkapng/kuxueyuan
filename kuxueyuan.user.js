@@ -15,6 +15,8 @@
 (function() {
     'use strict';
 
+    var selector = document.querySelector
+
     var whiteList = ['course/management', 'course/enterpriseCourse', 'course/watch']
     var notMatchList = ['#/landing', '#/index']
     var playVideoTimer, onPauseCount = 0
@@ -53,10 +55,17 @@
     }
 
     function nextPage (retryCount = 3) {
-        document.querySelector('.ant-pagination-next').click()
-        setTimeout(() => {
-            getCurrentProject()
-        }, 3000)
+        var nextBtn = selector('.ant-pagination-next')
+        if (nextBtn) {
+          nextBtn.click()
+          setTimeout(() => {
+              getCurrentProject()
+          }, 3000)
+        } else if (retryCount > 0) {
+          setTimeout(function () {
+            nextPage(retryCount - 1)
+          }, 2000)
+        }
     }
     function getCurrentProject (retryCount = 3) {
         setTimeout(() => {
