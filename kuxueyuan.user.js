@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         酷学院刷学习时长
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.2
 // @description  自动刷酷学院刷学习时长
 // @author       You
 // @run-at     document-start
@@ -14,8 +14,6 @@
 
 (function() {
     'use strict';
-
-    var selector = document.querySelector
 
     var whiteList = ['course/management', 'course/enterpriseCourse', 'course/watch']
     var notMatchList = ['#/landing', '#/index']
@@ -55,7 +53,7 @@
     }
 
     function nextPage (retryCount = 3) {
-        var nextBtn = selector('.ant-pagination-next')
+        var nextBtn =  document.querySelector('.ant-pagination-next')
         if (nextBtn) {
           nextBtn.click()
           setTimeout(() => {
